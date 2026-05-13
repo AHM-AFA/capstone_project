@@ -1,2 +1,4 @@
 # capstone_project
-This is a my graduation project for the Google it automation with python.
+========================================
+These are a bunch of projects that are to be done to showcase the understanding of all the courses.
+
