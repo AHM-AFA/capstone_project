@@ -19,20 +19,24 @@ def process_img(images_names):
                 img = changed_img.rotate(-90)
                 img_width = int(img.size[0] * 0.30)
                 img_height = int(img.size[1] * 0.42)
-                img.resize((img_width,img_height)).convert("RGB").save(change_exten(file))
+                img.resize((img_width,img_height))
+                change_exten(img,file)
         except(IOError, SyntaxError):
             continue
 
 
 #Change file format from .png to .jpeg
-def change_exten(file):
-    name, ext = os.path.splitext(file)
-    #Check if a file is in a format other than jpeg or jpg
+def change_exten(img,file):
 
+    name, ext = os.path.splitext(file)
+
+    #Check if a file is in a format other than jpeg or jpg
     if ext != ".jpg" and ext != ".jpeg":
-        return "Edited Images/"+name+".jpeg"    
+        image_converted_to_rgb = img.convert("RGB")
+        image_converted_to_rgb.save("Edited Images/"+name+".jpeg")  
     else:
-        return "Edited Images/"+file
+        img.save("Edited Images/"+file)
+        
         
 
 
