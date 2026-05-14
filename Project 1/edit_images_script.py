@@ -4,9 +4,9 @@ from PIL import Image
 #Change into the directory that contains the images and list all the Image names
 def change_dir():
 
-    os.chdir("Images") 
-    print(os.getcwd())
-    return os.listdir()
+    images_dir = os.path.join(os.getcwd(),"Images") 
+    os.chdir(images_dir)
+    return os.listdir(images_dir)
 
 #Process all images in the directory and change their format
 def process_img(images_names):
