@@ -4,7 +4,8 @@ from PIL import Image
 #Change into the directory that contains the images and list all the Image names
 def change_dir():
 
-    images_dir = os.path.join(os.getcwd(),"Images") 
+    #find the images directory which is inside the directory of the script then move to it.
+    images_dir = os.path.join(os.path.dirname(__file__),"Images")
     os.chdir(images_dir)
     return os.listdir(images_dir)
 
